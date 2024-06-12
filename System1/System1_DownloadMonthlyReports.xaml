@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1219.2,3045.6</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>707.2,3045.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_DownloadMonthlyReports_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -201,7 +201,7 @@
                         </scg:List>
                       </ui:SelectItem.Items>
                       <ui:SelectItem.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a9f10e3b-9f36-4796-ba0b-80b946ecbc45" InformativeScreenshot="420b1e2e398b25ec6a0914c6617fc874" Selector="&lt;webctrl aaname='' aria-role='option' tag='Button' /&gt;">
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a9f10e3b-9f36-4796-ba0b-80b946ecbc45" InformativeScreenshot="420b1e2e398b25ec6a0914c6617fc874" Selector="&lt;html app='msedge.exe' title='ACME System 1 - Download Monthly Report' /&gt;&lt;webctrl aria-role='button' tag='BUTTON' type='button' idx='1' /&gt;">
                           <ui:Target.TimeoutMS>
                             <InArgument x:TypeArguments="x:Int32" />
                           </ui:Target.TimeoutMS>
