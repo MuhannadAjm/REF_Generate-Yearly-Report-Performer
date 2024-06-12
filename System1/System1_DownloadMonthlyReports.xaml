@@ -3,11 +3,12 @@
     <x:Property Name="in_TaxID" Type="InArgument(x:String)" />
     <x:Property Name="in_Year" Type="InArgument(x:String)" />
     <x:Property Name="in_ReportDirPath" Type="InArgument(x:String)" />
+    <x:Property Name="in_URL" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1219.2,2892</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1219.2,3045.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_DownloadMonthlyReports_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -97,13 +98,9 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1_DownloadMonthlyReports" sap:VirtualizedContainerService.HintSize="645.6,2827.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System1_DownloadMonthlyReports" sap:VirtualizedContainerService.HintSize="645.6,2980.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="s:String[]" Name="arr_Month">
-        <Variable.Default>
-          <VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;,&quot;July&quot;,&quot;August&quot;,&quot;September&quot;,&quot;October&quot;,&quot;November&quot;,&quot;December&quot;}" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="s:String[]" Default="[{&quot;January&quot;,&quot;February&quot;,&quot;March&quot;,&quot;April&quot;,&quot;May&quot;,&quot;June&quot;,&quot;July&quot;,&quot;August&quot;,&quot;September&quot;,&quot;October&quot;,&quot;November&quot;,&quot;December&quot;}]" Name="arr_Month" />
       <Variable x:TypeArguments="x:String" Name="ReportFolderPath" />
       <Variable x:TypeArguments="x:Boolean" Name="SaveAs" />
     </Sequence.Variables>
@@ -113,6 +110,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="583.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;System1_DownloadMonthlyReports&quot;]" />
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="System1\System1_NavigateTo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="583.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="System1\System1_NavigateTo.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_URL" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <Assign DisplayName="Assign FolderPath" sap:VirtualizedContainerService.HintSize="583.2,81.6" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[ReportFolderPath]</OutArgument>

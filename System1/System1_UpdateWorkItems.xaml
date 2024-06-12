@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="in_Comment" Type="InArgument(x:String)" />
     <x:Property Name="in_Status" Type="InArgument(x:String)" />
+    <x:Property Name="in_URL" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1219.2,1372</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1219.2,1565.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System1_UpdateWorkItems_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -40,6 +41,7 @@
       <x:String>UiPath.UIAutomationCore.Contracts</x:String>
       <x:String>UiPath.Platform.ObjectLibrary</x:String>
       <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -85,22 +87,33 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="System1_UpdateWorkItems" sap:VirtualizedContainerService.HintSize="641.6,1307.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="System1_UpdateWorkItems" sap:VirtualizedContainerService.HintSize="641.6,1500.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="579.2,142.4" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;System1_UpdateWorkItems&quot;]" />
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser Work Item Details" sap:VirtualizedContainerService.HintSize="579.2,1012.8" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="47de082973a49b1891fecbe80fe40b49" Selector="&lt;html app='msedge.exe' title='ACME System 1 - Work Items' /&gt;">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="System1\System1_NavigateTo.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="579.2,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="System1\System1_NavigateTo.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_URL" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser Work Item Details" sap:VirtualizedContainerService.HintSize="579.2,1052.8" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="47de082973a49b1891fecbe80fe40b49" Selector="&lt;html app='msedge.exe' title='ACME System 1 - Work Items' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="545.6,865.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="545.6,905.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -128,7 +141,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe ACME System 1'" sap:VirtualizedContainerService.HintSize="483.2,606.4" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="a20b5d4a550591fc1c3d1d93797e67dd" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 -*' /&gt;&lt;ctrl name='ACME System 1 -*' /&gt;&lt;ctrl role='pane' text='ACME System 1 -*' /&gt;">
+            <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Attach Browser 'msedge.exe ACME System 1'" sap:VirtualizedContainerService.HintSize="483.2,646.4" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="a20b5d4a550591fc1c3d1d93797e67dd" Selector="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 -*' /&gt;&lt;ctrl name='ACME System 1 -*' /&gt;&lt;ctrl role='pane' text='ACME System 1 -*' /&gt;">
               <ui:BrowserScope.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>
