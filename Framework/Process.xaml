@@ -152,12 +152,20 @@
         <InArgument x:TypeArguments="x:String" x:Key="in_URL">[in_Config("Download Monthly Report_URL").ToString]</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Merge Monthly Reports- Invoke Workflow File" sap:VirtualizedContainerService.HintSize="472.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="System1\System1_MergeMonthlyReports.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="System1\System1_MergeMonthlyReport.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="472.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="System1\System1_MergeMonthlyReport.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_TaxID">[TaxID]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Year">[in_Config("Year_Report").ToString]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_YearlyReportPath">[YearlyReportPath]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_ReportPath">[in_Config("Report_Data_Download").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_ReportPath">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Report_Data_Download&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TaxID">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TaxID" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Year">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Year_Report&quot;).ToString" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="Out_YearReportPath">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="YearlyReportPath" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Upload Yearly Report - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="472.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="System1\System1_UploadYearlyReport.xaml">
