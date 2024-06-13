@@ -170,11 +170,21 @@
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Upload Yearly Report - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="472.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="System1\System1_UploadYearlyReport.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="in_TaxID">[TaxID]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_Year">[in_Config("Year_Report").ToString]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_YearlyReportPath">[Path.GetFullPath(YearlyReportPath)]</InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="out_Confirmation">[ConformationID]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_URL">[in_Config("Upload Yearly Report_URL").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_TaxID">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="TaxID" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_Year">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Year_Report&quot;).ToString" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_YearlyReportPath">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="Path.GetFullPath(YearlyReportPath)" />
+        </InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_Confirmation">
+          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="ConformationID" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_URL">
+          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;UploadYearlyReport_URL&quot;).ToString" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName=" Update WorkItems  - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="472.8,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="System1\System1_UpdateWorkItems.xaml">
